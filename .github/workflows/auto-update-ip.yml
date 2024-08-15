@@ -20,7 +20,9 @@ jobs:
           curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/yx_ips.txt -o ${GITHUB_WORKSPACE}/yx_ips.txt
           echo Get bestproxy
           curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/sgfd_ips.txt -o ${GITHUB_WORKSPACE}/sgfd_ips.txt 
-
+          echo Get fdip
+          curl -s https://raw.githubusercontent.com/xj888xj/CFCDN-AutoYX/main/FDIP/all.txt -o ${GITHUB_WORKSPACE}/FDIP/all.txt
+          
       - name: Creat Message
         id: msg
         run: |
