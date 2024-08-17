@@ -58,7 +58,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+                    data.append(f"{ip_address}#{latency_unit}")
 
     elif "stock.hostmonit.com" in url:
         rows = soup.find_all('tr', class_=re.compile(r'el-table__row'))
@@ -72,7 +72,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+                    data.append(f"{ip_address}#{latency_unit}")
 
     elif "ip.164746.xyz" in url:
         rows = soup.find_all('tr')
@@ -85,7 +85,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}-{latency_value}{latency_unit}")
+                    data.append(f"{ip_address}#{latency_unit}")
 
     elif "monitor.gacjie.cn" in url:
         rows = soup.find_all('tr')
@@ -99,7 +99,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+                    data.append(f"{ip_address}#{latency_unit}")
 
     elif "345673.xyz" in url:
         rows = soup.find_all('tr', class_=re.compile(r'line-cm|line-ct|line-cu'))
@@ -113,7 +113,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+                    data.append(f"{ip_address}#{latency_unit}")
 
     return data
 
