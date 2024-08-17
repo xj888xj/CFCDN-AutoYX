@@ -29,7 +29,7 @@ jobs:
     - name: Run shell script
       run: |
         chmod +x cloudflarest-cesu.sh
-        ./FDIP-cesu.sh
+        ./cloudflarest-cesu.sh
 
     - name: Commit and push results
       run: |
