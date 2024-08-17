@@ -58,7 +58,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{latency_unit}")
+                    data.append(f"{ip_address}")
 
     elif "stock.hostmonit.com" in url:
         rows = soup.find_all('tr', class_=re.compile(r'el-table__row'))
@@ -72,7 +72,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{latency_unit}")
+                    data.append(f"{ip_address}")
 
     elif "ip.164746.xyz" in url:
         rows = soup.find_all('tr')
@@ -85,7 +85,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{latency_unit}")
+                    data.append(f"{ip_address}")
 
     elif "monitor.gacjie.cn" in url:
         rows = soup.find_all('tr')
@@ -99,7 +99,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{latency_unit}")
+                    data.append(f"{ip_address}")
 
     elif "345673.xyz" in url:
         rows = soup.find_all('tr', class_=re.compile(r'line-cm|line-ct|line-cu'))
@@ -113,7 +113,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}#{latency_unit}")
+                    data.append(f"{ip_address}")
 
     return data
 
@@ -126,9 +126,6 @@ def main():
 
     # 去除重复的IP地址行
     unique_data = list(set(all_data))
-
-    # 过滤延迟数据低于40ms的行
-    filtered_data = [line for line in unique_data if float(line.split('-')[-1].replace('ms', '')) < 40]
 
     # 写入到yx_ips.txt文件
     with open('yx_ips.txt', 'w', encoding='utf-8') as f:
