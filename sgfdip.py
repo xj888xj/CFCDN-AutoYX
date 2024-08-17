@@ -43,7 +43,7 @@ def filter_and_format_ips(ip_list):
             obj = IPWhois(ip)
             results = obj.lookup_rdap()
             if results['network']['country'] == 'SG':
-                singapore_ips.append(f"{ip}")
+                singapore_ips.append(f"{ip}#SG")
         except Exception as e:
             print(f"Error processing IP {ip}: {e}")
     return singapore_ips
