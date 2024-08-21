@@ -1,4 +1,4 @@
-name: SGIP Speed Test
+name: SG-FDIP Speed Test
 
 on:
   workflow_dispatch:  # 手动触发
