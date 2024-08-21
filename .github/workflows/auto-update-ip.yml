@@ -18,10 +18,10 @@ jobs:
         run: |
           curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/yx_ips.txt -o ${GITHUB_WORKSPACE}/yx_ips.txt
           curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/sgfd_ips.txt -o ${GITHUB_WORKSPACE}/sgfd_ips.txt 
-          curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/FDIP/all.txt -o ${GITHUB_WORKSPACE}/FDIP/all.txt
-          curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/CloudflareST/sg.csv -o ${GITHUB_WORKSPACE}/CloudflareST/sg.csv
-          curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/CloudflareST/sg.txt -o ${GITHUB_WORKSPACE}/CloudflareST/sg.txt
-          curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/CloudflareST/sgcs.txt -o ${GITHUB_WORKSPACE}/CloudflareST/sgcs.txt
+          #curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/FDIP/all.txt -o ${GITHUB_WORKSPACE}/FDIP/all.txt
+          #curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/CloudflareST/sg.csv -o ${GITHUB_WORKSPACE}/CloudflareST/sg.csv
+          #curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/CloudflareST/sg.txt -o ${GITHUB_WORKSPACE}/CloudflareST/sg.txt
+          #curl -s https://raw.githubusercontent.com/yutian81/CFCDN-Auto/main/CloudflareST/sgcs.txt -o ${GITHUB_WORKSPACE}/CloudflareST/sgcs.txt
           
       - name: Creat Message
         id: msg
