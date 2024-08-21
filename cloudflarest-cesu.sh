@@ -27,7 +27,7 @@ fi
 
 # 7. 执行 CloudflareST 进行测速
 echo "======================运行 CloudflareSpeedTest ========================="
-"${CFST_DIR}/CloudflareST" -tp 443 -f "${CFST_DIR}/ip.txt" -n 500 -dn 5 -tl 250 -tll 30 -o "${CFST_DIR}/ip.csv" -url "$URL"
+"${CFST_DIR}/CloudflareST" -tp 443 -f "${CFST_DIR}/ip.txt" -n 500 -dn 5 -tl 350 -tll 40 -o "${CFST_DIR}/ip.csv" -url "$URL"
 
 # 8. 从 ip.csv 文件中筛选下载速度高于 5 的 IP地址，并删除重复的 IP 地址行，生成 yxip.txt
 echo "==================筛选下载速度高于 5mb/s 的IP地址并去重===================="
