@@ -4,7 +4,7 @@ from ipwhois import IPWhois
 
 # 配置
 CF_API_KEY = os.getenv('CF_API_KEY')
-CF_ZONE_YID = os.getenv('CF_ZONE_YID')
+CF_ZONE_ID = os.getenv('CF_ZONE_ID')
 CF_DNS_NAME = os.getenv('CF_DNS_NAME')
 FILE_PATH = 'sgfd_ips.txt'
 SGCS_FILE_PATH = 'CloudflareST/sgcs.txt'
@@ -73,13 +73,13 @@ def clear_dns_records():
     }
 
     # 获取现有的DNS记录
-    dns_records_url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_YID}/dns_records'
+    dns_records_url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_ID}/dns_records'
     dns_records = requests.get(dns_records_url, headers=headers).json()
 
     # 删除旧的DNS记录
     for record in dns_records['result']:
         if record['name'] == CF_DNS_NAME:
-            delete_url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_YID}/dns_records/{record["id"]}'
+            delete_url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_ID}/dns_records/{record["id"]}'
             requests.delete(delete_url, headers=headers)
 
 # 第五步：更新Cloudflare域名的DNS记录为sgfd_ips.txt文件中的IP地址
@@ -92,7 +92,7 @@ def update_dns_records():
         'Content-Type': 'application/json',
     }
 
-    dns_records_url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_YID}/dns_records'
+    dns_records_url = f'https://api.cloudflare.com/client/v4/zones/{CF_ZONE_ID}/dns_records'
     for ip in ips_to_update:
         data = {
             'type': 'A',
