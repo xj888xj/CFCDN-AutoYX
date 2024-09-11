@@ -60,10 +60,4 @@ jobs:
 
             echo "===============================脚本执行完成==============================="
 
-    - name: Commit and push results
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add CloudflareST/*.txt CloudflareST/*.csv CloudflareST/*.*
-        git commit -m "Add IP fdIPs with speed > 5mb/s"
-        git push
+    - uses: stefanzweifel/git-auto-commit-action@v5
