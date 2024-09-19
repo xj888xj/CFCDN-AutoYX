@@ -21,6 +21,7 @@ urls = [
     "https://ip.164746.xyz/",
     "https://monitor.gacjie.cn/page/cloudflare/ipv4.html",
     "https://345673.xyz/"
+    "https://raw.githubusercontent.com/ymyuuu/IPDB/main/bestcf.txt"
 ]
 
 # 解析延迟数据的正则表达式
