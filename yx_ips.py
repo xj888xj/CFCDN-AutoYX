@@ -16,12 +16,11 @@ headers = {
 
 # 定义五个网址
 urls = [
-    "https://cf.090227.xyz/",
-    "https://stock.hostmonit.com/CloudFlareYes",
+    #"https://cf.090227.xyz/",
+    #"https://stock.hostmonit.com/CloudFlareYes",
     "https://ip.164746.xyz/",
-    "https://monitor.gacjie.cn/page/cloudflare/ipv4.html",
-    "https://345673.xyz/"
-    "https://raw.githubusercontent.com/ymyuuu/IPDB/main/bestcf.txt"
+    "https://www.182682.xyz/page/cloudflare/ipv4.html",
+    "https://ipdb.api.030101.xyz/?type=bestcf&country=true"
 ]
 
 # 解析延迟数据的正则表达式
@@ -47,33 +46,33 @@ def process_site_data(url):
         return []
 
     data = []
-    if "cf.090227.xyz" in url:
-        rows = soup.find_all('tr')
-        for row in rows:
-            columns = row.find_all('td')
-            if len(columns) >= 3:
-                line_name = columns[0].text.strip()
-                ip_address = columns[1].text.strip()
-                latency_text = columns[2].text.strip()
-                latency_match = latency_pattern.match(latency_text)
-                if latency_match:
-                    latency_value = latency_match.group(1)
-                    latency_unit = 'ms'
-                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
-
-    elif "stock.hostmonit.com" in url:
-        rows = soup.find_all('tr', class_=re.compile(r'el-table__row'))
-        for row in rows:
-            columns = row.find_all('td')
-            if len(columns) >= 3:
-                line_name = columns[0].text.strip()
-                ip_address = columns[1].text.strip()
-                latency_text = columns[2].text.strip()
-                latency_match = latency_pattern.match(latency_text)
-                if latency_match:
-                    latency_value = latency_match.group(1)
-                    latency_unit = 'ms'
-                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+    #if "cf.090227.xyz" in url:
+    #    rows = soup.find_all('tr')
+    #    for row in rows:
+    #        columns = row.find_all('td')
+    #        if len(columns) >= 3:
+    #            line_name = columns[0].text.strip()
+    #            ip_address = columns[1].text.strip()
+    #            latency_text = columns[2].text.strip()
+    #            latency_match = latency_pattern.match(latency_text)
+    #            if latency_match:
+    #                latency_value = latency_match.group(1)
+    #                latency_unit = 'ms'
+    #                data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+    #
+    #elif "stock.hostmonit.com/CloudFlareYes" in url:
+    #    rows = soup.find_all('tr', class_=re.compile(r'el-table__row'))
+    #    for row in rows:
+    #        columns = row.find_all('td')
+    #        if len(columns) >= 3:
+    #            line_name = columns[0].text.strip()
+    #            ip_address = columns[1].text.strip()
+    #            latency_text = columns[2].text.strip()
+    #            latency_match = latency_pattern.match(latency_text)
+    #            if latency_match:
+    #                latency_value = latency_match.group(1)
+    #                latency_unit = 'ms'
+    #                data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
 
     elif "ip.164746.xyz" in url:
         rows = soup.find_all('tr')
@@ -88,21 +87,21 @@ def process_site_data(url):
                     latency_unit = 'ms'
                     data.append(f"{ip_address}-{latency_value}{latency_unit}")
 
-    elif "monitor.gacjie.cn" in url:
-        rows = soup.find_all('tr')
-        for row in rows:
-            tds = row.find_all('td')
-            if len(tds) >= 5:
-                line_name = tds[0].text.strip()
-                ip_address = tds[1].text.strip()
-                latency_text = tds[4].text.strip()
-                latency_match = latency_pattern.match(latency_text)
-                if latency_match:
-                    latency_value = latency_match.group(1)
-                    latency_unit = 'ms'
-                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+    #elif "www.182682.xyz/page/cloudflare/ipv4.html" in url:
+    #    rows = soup.find_all('tr')
+    #    for row in rows:
+    #        tds = row.find_all('td')
+    #        if len(tds) >= 5:
+    #            line_name = tds[0].text.strip()
+    #            ip_address = tds[1].text.strip()
+    #            latency_text = tds[4].text.strip()
+    #            latency_match = latency_pattern.match(latency_text)
+    #            if latency_match:
+    #                latency_value = latency_match.group(1)
+    #                latency_unit = 'ms'
+    #                data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
 
-    elif "345673.xyz" in url:
+    elif "ipdb.api.030101.xyz/?type=bestcf&country=true" in url:
         rows = soup.find_all('tr', class_=re.compile(r'line-cm|line-ct|line-cu'))
         for row in rows:
             tds = row.find_all('td')
