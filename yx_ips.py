@@ -19,7 +19,7 @@ urls = [
     #"https://cf.090227.xyz/",
     #"https://stock.hostmonit.com/CloudFlareYes",
     "https://ip.164746.xyz/",
-    "https://www.182682.xyz/page/cloudflare/ipv4.html",
+    #"https://www.182682.xyz/page/cloudflare/ipv4.html",
     "https://ipdb.api.030101.xyz/?type=bestcf&country=true"
 ]
 
