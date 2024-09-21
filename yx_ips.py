@@ -20,7 +20,7 @@ urls = [
     "https://stock.hostmonit.com/CloudFlareYes",
     "https://ip.164746.xyz/",
     "https://monitor.gacjie.cn/page/cloudflare/ipv4.html",
-    "https://345673.xyz/"
+    "https://www.182682.xyz/page/cloudflare/ipv4.html"
 ]
 
 # 解析延迟数据的正则表达式
@@ -101,7 +101,7 @@ def process_site_data(url):
                     latency_unit = 'ms'
                     data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
 
-    elif "345673.xyz" in url:
+    elif "www.182682.xyz" in url:
         rows = soup.find_all('tr', class_=re.compile(r'line-cm|line-ct|line-cu'))
         for row in rows:
             tds = row.find_all('td')
